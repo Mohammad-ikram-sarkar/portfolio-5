@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap');
+.logo {
+    font-family: "Pacifico", cursive;
+  
+
+}
+.box-shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  /* Adjust the values as needed: x-offset, y-offset, blur, spread, color */
+}
+.intext-1{
+  font-family: "Roboto", sans-serif;
+}

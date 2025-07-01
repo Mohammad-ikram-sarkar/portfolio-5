@@ -2,17 +2,18 @@ import React, { useState } from 'react';
 import { FiPhoneCall, FiMenu, FiX } from 'react-icons/fi';
 import { TbMenu3 } from "react-icons/tb";
 import { PiPhoneCallFill } from "react-icons/pi";
-import { FaWhatsapp } from "react-icons/fa6";
-
+import { FaLinkedin, FaWhatsapp } from "react-icons/fa6";
+import { IoLogoGithub } from "react-icons/io";
+import { FaXTwitter } from "react-icons/fa6";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  const navItems = ["SERVICES", "WORKS", "NOTES", "EXIPERIENCE"];
+  const navItems = ["SERVICES", "PROJECT", "SKILL", "EXIPERIENCE"];
 
   return (
-    <div className=" bg-[#fefcf9] font-sans px-4 sm:px-8 md:px-20 py-8">
+    <div className=" bg-[#fefcf9] font-sans px-4 sm:px-8 md:px-20 md:py-8 pb-8 pt-2">
       {/* Top Navigation */}
       <div className="flex justify-between items-center text-sm md:text-base max-sm:border-b-2 pb-2">
         <div className="logo text-xl font-bold">IKRAM</div>
@@ -45,9 +46,10 @@ const Header = () => {
 
         {/* Right Side Contact */}
         <div className="hidden md:flex items-center gap-4 text-sm text-gray-800 font-medium">
-          <span>+880 1776703315</span>
-        <a href="https://wa.me/+8801776703315"> <FaWhatsapp
-className='text-gray-700 text-2xl font-black bg-white box-shadow p-1 rounded-2xl' /></a> 
+          
+         <a href="https://www.linkedin.com/in/ikram-islam/"><FaLinkedin size={16} className="mr-2 text-gray-500" /></a>
+         <a href="https://github.com/Mohammad-ikram-sarkar"><IoLogoGithub  size={18} className="mr-2 text-gray-500" /></a>
+         <a href="https://x.com/IkramIslam84992"><FaXTwitter size={16} className="mr-2 text-gray-500"/></a>
         </div>
       </div>
 
@@ -63,10 +65,13 @@ className='text-gray-700 text-2xl font-black bg-white box-shadow p-1 rounded-2xl
               {item}
             </a>
           ))}
-          <div className="flex items-center gap-2 text-sm text-gray-800 font-medium mt-4">
-            <span>+880 1776703315</span>
-           <a href="https://wa.me/+8801776703315"> <FaWhatsapp
-className='text-gray-700 text-2xl font-black bg-white box-shadow p-1 rounded-2xl' /></a> 
+          <div className="flex items-center   text-sm text-gray-800 font-medium mt-4">
+             
+                          <a href="https://www.linkedin.com/in/ikram-islam/"><FaLinkedin size={16} className="mr-2 text-gray-500" /></a>
+         <a href="https://github.com/Mohammad-ikram-sarkar"><IoLogoGithub  size={18} className="mr-2 text-gray-500" /></a>
+         <a href="https://x.com/IkramIslam84992"><FaXTwitter size={16} className="mr-2 text-gray-500"/></a>
+                         
+           
           </div>
         </div>
       )}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FiMail, FiMapPin } from 'react-icons/fi';
-import { FaHtml5, FaCss3, FaReact, FaNodeJs, FaLinkedin } from "react-icons/fa6";
+import { FaHtml5, FaCss3, FaReact, FaNodeJs, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io5";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiMongodb } from "react-icons/si";
@@ -43,8 +43,11 @@ function Home() {
               </a>
             </div>
             <div className="flex items-center text-gray-700">
-              <FaLinkedin size={16} className="mr-2 text-gray-500" />
-              <a href="https://www.linkedin.com/in/ikram-islam/">Ikram</a>
+              <FaWhatsapp size={16} className="mr-2 text-gray-500" />
+              <a href="https://wa.me/+8801776703315">+8801776703315</a>
+
+               {/* <a href="https://wa.me/+8801776703315"> <
+className='text-gray-700 text-2xl font-black bg-white box-shadow p-1 rounded-2xl' /></a>  */}
             </div>
           </section>
 
@@ -118,8 +121,8 @@ function Home() {
               </a>
             </div>
             <div className="flex items-center text-gray-700">
-              <FaLinkedin size={16} className="mr-2 text-gray-500" />
-              <a href="https://www.linkedin.com/in/ikram-islam/">Ikram</a>
+              <FaWhatsapp size={16} className="mr-2 text-gray-500" />
+              <a href="https://wa.me/+8801776703315">+8801776703315</a>
             </div>
           </section>
 

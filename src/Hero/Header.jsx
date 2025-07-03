@@ -92,7 +92,7 @@ const Header = () => {
               {item.name}
             </button>
           ))}
-          <div className="flex items-center gap-2 text-sm text-gray-800 font-medium mt-4 justify-center">
+          <div className="flex items-center gap-5 text-sm text-gray-800 font-medium mt-3 justify-center">
             <a href="https://www.linkedin.com/in/ikram-islam/"><FaLinkedin size={16} className="mr-2 text-gray-500" /></a>
             <a href="https://github.com/Mohammad-ikram-sarkar"><IoLogoGithub size={18} className="mr-2 text-gray-500" /></a>
             <a href="https://x.com/IkramIslam84992"><FaXTwitter size={16} className="mr-2 text-gray-500" /></a>

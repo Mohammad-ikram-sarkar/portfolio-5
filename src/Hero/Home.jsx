@@ -5,7 +5,7 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiMongodb } from "react-icons/si";
 import Marquee from "react-fast-marquee";
-import cover from "../assets/WhatsApp Image 2025-07-01 at 11.09.11_893060b8.jpg";
+import cover from "../assets/WhatsApp Image 2025-07-02 at 09.24.14_092ab17a.jpg";
 
 function Home() {
   return (
@@ -44,7 +44,7 @@ function Home() {
             </div>
             <div className="flex items-center text-gray-700">
               <FaWhatsapp size={16} className="mr-2 text-gray-500" />
-              <a href="https://wa.me/+8801776703315">+8801776703315</a>
+              <a href="https://wa.me/+8801776703315" className='hover:underline'>+8801776703315</a>
 
                {/* <a href="https://wa.me/+8801776703315"> <
 className='text-gray-700 text-2xl font-black bg-white box-shadow p-1 rounded-2xl' /></a>  */}
@@ -66,10 +66,11 @@ className='text-gray-700 text-2xl font-black bg-white box-shadow p-1 rounded-2xl
         <div className="flex-shrink-0 relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-1/3 lg:h-auto lg:max-w-md flex items-center justify-center">
           <div className="relative w-full h-full rounded-full overflow-hidden shadow-xl border-4 border-white">
             <img
-              src={cover}
-              alt="Mohammad Ikram"
-              className="w-full h-full object-cover"
-            />
+  src={cover}
+  alt="Mohammad Ikram"
+  className="w-full h-full object-cover transform transition-transform duration-500 scale-130 "
+/>
+
           </div>
         </div>
 

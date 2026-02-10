@@ -7,7 +7,7 @@ import { Calendar, MapPin } from "lucide-react";
 const Experience = () => {
     const journey = [
         {
-            title: "Self-Taught MERN Stack Developer",
+            title: "Self-Taught Full Stack Developer",
             organization: "Independent Learning",
             duration: "2023 - Present",
             location: "Bangladesh",
@@ -29,7 +29,7 @@ const Experience = () => {
             organization: "Various Clients",
             duration: "2023 - Present",
             location: "Remote",
-            description: "Delivered 20+ web development projects for clients worldwide. Specialized in responsive websites, e-commerce solutions, and custom web applications using MERN stack.",
+            description: "Delivered 20+ web development projects for clients worldwide. Specialized in responsive websites, e-commerce solutions, and custom web applications using Full Stack technologies.",
             tech: ["React", "Node.js", "MongoDB", "TailwindCSS"],
             type: "freelance"
         }
@@ -54,12 +54,13 @@ const Experience = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
-            <div className="container mx-auto px-4 sm:px-8 py-12 lg:py-16">
+        <section id="experience" className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 py-12 lg:py-20">
+            <div className="container mx-auto px-4 sm:px-8">
                 {/* Page Header */}
                 <motion.div
                     initial={{ y: -50, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                     className="text-center mb-12"
                 >
@@ -83,7 +84,8 @@ const Experience = () => {
                                 <motion.div
                                     key={index}
                                     initial={{ x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
-                                    animate={{ x: 0, opacity: 1 }}
+                                    whileInView={{ x: 0, opacity: 1 }}
+                                    viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: index * 0.2 }}
                                     className={`relative md:flex md:items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
                                         }`}
@@ -142,7 +144,7 @@ const Experience = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -10,7 +10,8 @@ const SkillBadge = ({ icon, name }) => {
   return (
     <motion.div
       initial={{ scale: 0.8, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      viewport={{ once: true }}
       whileHover={{ scale: 1.1, y: -5 }}
       transition={{ duration: 0.2 }}
     >
@@ -49,7 +50,8 @@ const SkillSection = ({ title, skills }) => {
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true }}
           className="flex flex-wrap gap-3"
         >
           {skills.map((skill, index) => (
@@ -113,12 +115,13 @@ export default function Skill() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
-      <div className="container mx-auto px-4 sm:px-8 py-12 lg:py-16">
+    <section id="skills" className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 py-12 lg:py-20">
+      <div className="container mx-auto px-4 sm:px-8">
         {/* Header */}
         <motion.div
           initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
@@ -134,7 +137,8 @@ export default function Skill() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           <motion.div
             initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <SkillSection title="Frontend Development" skills={frontendSkills} />
@@ -142,7 +146,8 @@ export default function Skill() {
 
           <motion.div
             initial={{ x: 50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <SkillSection title="Backend Development" skills={backendSkills} />
@@ -150,7 +155,8 @@ export default function Skill() {
 
           <motion.div
             initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <SkillSection title="Programming Languages" skills={languages} />
@@ -158,7 +164,8 @@ export default function Skill() {
 
           <motion.div
             initial={{ x: 50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <SkillSection title="Tools & Platforms" skills={toolsAndPlatforms} />
@@ -166,7 +173,8 @@ export default function Skill() {
 
           <motion.div
             initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.6 }}
             className="lg:col-span-2"
           >
@@ -174,6 +182,6 @@ export default function Skill() {
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

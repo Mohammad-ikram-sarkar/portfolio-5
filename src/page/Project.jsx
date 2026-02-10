@@ -39,12 +39,13 @@ const Project = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
-            <div className="container mx-auto px-4 sm:px-8 py-12 lg:py-16">
+        <section id="projects" className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 py-12 lg:py-20">
+            <div className="container mx-auto px-4 sm:px-8">
                 {/* Page Header */}
                 <motion.div
                     initial={{ y: -50, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                     className="text-center mb-12"
                 >
@@ -60,7 +61,8 @@ const Project = () => {
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
-                    animate="visible"
+                    whileInView="visible"
+                    viewport={{ once: true }}
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
                 >
                     {projects.map((project, index) => (
@@ -112,7 +114,7 @@ const Project = () => {
                     ))}
                 </motion.div>
             </div>
-        </div>
+        </section>
     );
 };
 

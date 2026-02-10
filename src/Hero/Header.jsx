@@ -4,7 +4,7 @@ import { FiX } from 'react-icons/fi';
 import { FaLinkedin } from "react-icons/fa6";
 import { IoLogoGithub } from "react-icons/io";
 import { FaXTwitter } from "react-icons/fa6";
-import { NavLink, useNavigate } from 'react-router';
+import { useNavigate, useLocation } from 'react-router';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -12,11 +12,24 @@ import { motion, AnimatePresence } from 'framer-motion';
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+
+      // Determine active section
+      const sections = ["home", "projects", "skills", "experience", "contact"];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element && element.offsetTop <= scrollPosition && (element.offsetTop + element.offsetHeight) > scrollPosition) {
+          setActiveSection(section);
+        }
+      }
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -25,15 +38,29 @@ const Header = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   const navItems = [
-    { name: "HOME", path: "/" },
-    { name: "PROJECTS", path: "/project" },
-    { name: "SKILLS", path: "/skill" },
-    { name: "JOURNEY", path: "/experience" }
+    { name: "HOME", id: "home" },
+    { name: "SKILLS", id: "skills" },
+    { name: "PROJECTS", id: "projects" },
+    { name: "JOURNEY", id: "experience" },
+    { name: "CONTACT", id: "contact" }
   ];
 
-  const handleNavigation = (path) => {
-    navigate(path);
+  const handleNavigation = (id) => {
     setMenuOpen(false);
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   const socialLinks = [
@@ -47,11 +74,10 @@ const Header = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-lg' 
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? 'bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-lg'
+        : 'bg-transparent'
+        }`}
     >
       <div className="container mx-auto px-4 sm:px-8 md:px-20">
         <div className="flex justify-between items-center h-16 md:h-20">
@@ -60,7 +86,7 @@ const Header = () => {
             className="relative group cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => navigate('/')}
+            onClick={() => handleNavigation('home')}
           >
             <div className="absolute -inset-2 bg-gradient-to-r from-primary to-teal-400 rounded-lg blur opacity-0 group-hover:opacity-30 transition duration-300"></div>
             <div className="relative flex items-center gap-3">
@@ -71,11 +97,11 @@ const Header = () => {
                 <div className="absolute -inset-0.5 bg-gradient-to-br from-primary to-teal-400 rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-300 -z-10"></div>
               </div>
               <div className="flex flex-col">
-                <span className="text-lg md:text-xl font-bold text-black dark:text-white leading-none font-mono">
+                <span className="text-lg md:text-xl font-bold text-foreground leading-none font-mono">
                   &lt;IkramSarkar /&gt;
                 </span>
-                <span className="text-xs text-black/60 dark:text-white/60 font-mono">
-                  // MERN Developer
+                <span className="text-xs text-muted-foreground font-mono">
+                  // Full Stack Developer
                 </span>
               </div>
             </div>
@@ -83,24 +109,23 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
-            {navItems.map((item, index) => (
-              <NavLink
-                key={item.name}
-                to={item.path}
-                end={item.path === "/"}
-                className={({ isActive }) => "relative px-4 py-2 group"}
-              >
-                {({ isActive }) => (
+            {navItems.map((item, index) => {
+              const isActive = activeSection === item.id;
+              return (
+                <button
+                  key={item.name}
+                  onClick={() => handleNavigation(item.id)}
+                  className="relative px-4 py-2 group bg-transparent border-none cursor-pointer"
+                >
                   <>
                     <motion.span
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className={`text-sm font-semibold transition-colors ${
-                        isActive 
-                          ? 'text-foreground' 
-                          : 'text-foreground/60 hover:text-foreground'
-                      }`}
+                      className={`text-sm font-semibold transition-colors ${isActive
+                        ? 'text-foreground'
+                        : 'text-foreground/60 hover:text-foreground'
+                        }`}
                     >
                       {item.name}
                     </motion.span>
@@ -115,9 +140,9 @@ const Header = () => {
                       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-teal-400 group-hover:w-full transition-all duration-300" />
                     )}
                   </>
-                )}
-              </NavLink>
-            ))}
+                </button>
+              )
+            })}
           </nav>
 
           {/* Right Side - Social & Theme */}
@@ -135,9 +160,9 @@ const Header = () => {
                   asChild
                   className="relative group hover:text-foreground transition-colors text-foreground/60"
                 >
-                  <a 
-                    href={social.url} 
-                    target="_blank" 
+                  <a
+                    href={social.url}
+                    target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
                   >
@@ -194,12 +219,11 @@ const Header = () => {
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: index * 0.1 }}
-                    onClick={() => handleNavigation(item.path)}
-                    className={`w-full text-left px-4 py-3 rounded-lg transition-all ${
-                      window.location.pathname === item.path
-                        ? 'bg-primary/10 text-primary font-medium'
-                        : 'text-muted-foreground hover:bg-muted hover:text-foreground'
-                    }`}
+                    onClick={() => handleNavigation(item.id)}
+                    className={`w-full text-left px-4 py-3 rounded-lg transition-all ${activeSection === item.id
+                      ? 'bg-primary/10 text-primary font-medium'
+                      : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                      }`}
                   >
                     {item.name}
                   </motion.button>
@@ -220,9 +244,9 @@ const Header = () => {
                       asChild
                       className="hover:bg-primary/10 hover:text-primary hover:border-primary/50"
                     >
-                      <a 
-                        href={social.url} 
-                        target="_blank" 
+                      <a
+                        href={social.url}
+                        target="_blank"
                         rel="noopener noreferrer"
                         aria-label={social.label}
                       >

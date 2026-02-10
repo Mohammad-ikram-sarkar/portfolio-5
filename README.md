@@ -1,12 +1,77 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a modern, responsive portfolio website built with React and Vite. It showcases my skills, projects, and professional journey as a Full Stack Web Developer. The application is designed as a Single Page Application (SPA) with smooth scrolling navigation and interactive elements.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Single Page Architecture (SPA)**: seamless navigation between sections without page reloads.
+- **Responsive Design**: Fully optimized for desktops, tablets, and mobile devices.
+- **Interactive UI**: Utilizing Framer Motion for engaging animations and transitions.
+- **Dark/Light Mode**: Built-in theme toggle for better user experience.
+- **Modern Tech Stack**: Built with React, Tailwind CSS, and Shadcn UI components.
+- **Contact Form**: Integrated contact section for easy communication.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend**: React, Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: Shadcn UI
+- **Animations**: Framer Motion
+- **Icons**: React Icons, Lucide React
+- **Routing**: React Router (for SPA structure)
+
+## Installation
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/yourusername/portfolio-5.git
+    cd portfolio-5
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Start the development server:**
+
+    ```bash
+    npm run dev
+    ```
+
+4.  **Build for production:**
+
+    ```bash
+    npm run build
+    ```
+
+## Project Structure
+
+```
+src/
+├── assets/          # Images and static assets
+├── components/      # Reusable UI components
+│   ├── ui/          # Shadcn UI primitives
+│   └── ...
+├── Hero/            # Main layout components
+│   ├── Home.jsx     # Main landing page composing all sections
+│   └── Header.jsx   # Top navigation with scroll spy
+├── page/            # Section components
+│   ├── Project.jsx  # Projects section
+│   ├── Skill.jsx    # Skills section
+│   ├── Experience.jsx # Journey/Experience section
+│   └── Contact.jsx  # Contact section
+└── App.jsx          # Application entry point
+```
+
+## Customization
+
+-   **Content**: Update the data arrays in `Home.jsx`, `Project.jsx`, `Skill.jsx`, and `Experience.jsx` to reflect your own information.
+-   **Images**: Replace images in only the `src/assets` folder.
+-   **Theme**: Customize colors and styles in `tailwind.config.js` and `index.css`.
+
+## License
+
+This project is open-source and available under the [MIT License](LICENSE).

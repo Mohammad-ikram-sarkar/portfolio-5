@@ -1,181 +1,207 @@
 import React from 'react';
-import { FiMail, FiMapPin } from 'react-icons/fi';
-import { FaHtml5, FaCss3, FaReact, FaNodeJs, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
+import { FiMail, FiMapPin, FiDownload } from 'react-icons/fi';
+import { FaHtml5, FaCss3, FaReact, FaNodeJs } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io5";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { SiMongodb } from "react-icons/si";
-import Marquee from "react-fast-marquee";
-import cover from "../assets/WhatsApp Image 2025-07-02 at 09.24.14_092ab17a.jpg";
+import { SiMongodb, SiExpress, SiNextdotjs, SiTypescript } from "react-icons/si";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import cover from "../assets/Gemini_Generated_Image_wuj3arwuj3arwuj3.png";
+import resume from "../assets/ikram.pdf";
 
 function Home() {
+  const techStack = [
+    { icon: FaHtml5, name: "HTML5", color: "#E34F26" },
+    { icon: FaCss3, name: "CSS3", color: "#1572B6" },
+    { icon: IoLogoJavascript, name: "JavaScript", color: "#F7DF1E" },
+    { icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
+    { icon: FaReact, name: "React", color: "#61DAFB" },
+    { icon: SiNextdotjs, name: "Next.js", color: "#000000" },
+    { icon: FaNodeJs, name: "Node.js", color: "#339933" },
+    { icon: SiExpress, name: "Express", color: "#000000" },
+    { icon: SiMongodb, name: "MongoDB", color: "#47A248" },
+    { icon: RiTailwindCssFill, name: "Tailwind", color: "#06B6D4" }
+  ];
+
+  const stats = [
+    { value: "1.5+", label: "Years Experience" },
+    { value: "48+", label: "Projects Completed" },
+    { value: "20+", label: "Happy Clients" },
+    { value: "100%", label: "Client Satisfaction" }
+  ];
+
   return (
-    <div className="bg-white font-inter text-gray-800 sm:p-8 md:p-12 lg:p-16 flex flex-col items-center justify-center mt-[-30px]">
-      {/* Header Section */}
-      <header className="text-center mb-10 w-full max-w-4xl">
-        <h1 className="text-4xl sm:text-5xl intext-1 font-bold text-gray-900 mb-2"> Mohammad Ikram </h1>
-        <h2 className="text-xl sm:text-2xl font-semibold text-gray-700 mb-1">MERN stack Web Developer </h2>
-        <p className="text-lg sm:text-xl text-gray-600">Based in Bangladesh</p>
-      </header>
+    <div className="min-h-screen pt-20 md:pt-24 bg-background">
+      <div className="container mx-auto px-4 sm:px-8 py-12 lg:py-20">
+        {/* Hero Section */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            <div className="space-y-4">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+            
+              </motion.div>
 
-      {/* Main Content Area */}
-      <main className="flex flex-col-reverse max-sm:flex-col lg:flex-row items-center lg:items-start justify-center w-full max-w-6xl gap-8 lg:gap-16">
-        {/* Left Column */}
-        <div className="flex flex-col space-y-8 text-left w-full lg:w-1/3 p-4">
-          {/* Biography */}
-          <section className='max-sm:hidden'>
-            <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-2">Biography</h3>
-            <p className="text-gray-700 leading-relaxed">
-              Work for money and code for love! I'm Ikram, an MERN stack Web Developer based in Bangladesh
-            </p>
-          </section>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-black dark:text-white leading-tight"
+              >
+                Hi, I'm{" "}
+                <span className="bg-gradient-to-r from-primary via-teal-400 to-primary bg-clip-text text-transparent">
+                  Ikram Sarkar
+                </span>
+              </motion.h1>
 
-          {/* Contact */}
-          <section className='max-sm:hidden'>
-            <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-2">Contact</h3>
-            <div className="flex items-center text-gray-700 mb-1">
-              <FiMapPin size={16} className="mr-2 text-gray-500" />
-              <span>Brahmanbaria, Bangladesh</span>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="text-xl sm:text-2xl text-black/70 dark:text-white/70 font-medium"
+              >
+                MERN Stack Web Developer
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="text-base sm:text-lg text-black/60 dark:text-white/60 leading-relaxed max-w-xl"
+              >
+                I craft beautiful, functional web applications with modern technologies. 
+                Passionate about creating seamless user experiences and writing clean, maintainable code.
+              </motion.p>
             </div>
-            <div className="flex items-center text-gray-700 mb-1">
-              <FiMail size={16} className="mr-2 text-gray-500" />
-              <a href="mailto:islamikram357@gmail.com" className="hover:underline">
-                islamikram357@gmail.com
-              </a>
-            </div>
-            <div className="flex items-center text-gray-700">
-              <FaWhatsapp size={16} className="mr-2 text-gray-500" />
-              <a href="https://wa.me/+8801776703315" className='hover:underline'>+8801776703315</a>
 
-               {/* <a href="https://wa.me/+8801776703315"> <
-className='text-gray-700 text-2xl font-black bg-white box-shadow p-1 rounded-2xl' /></a>  */}
-            </div>
-          </section>
+            {/* Contact Info */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-wrap gap-4 text-sm text-black/60 dark:text-white/60"
+            >
+              <div className="flex items-center gap-2">
+                <FiMapPin className="text-primary" size={16} />
+                <span>Brahmanbaria, Bangladesh</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <FiMail className="text-primary" size={16} />
+                <a href="mailto:islamikram357@gmail.com" className="hover:text-primary transition-colors">
+                  codewithikram@gmail.com
+                </a>
+              </div>
+            </motion.div>
 
-          {/* Services */}
-          <section className='max-sm:hidden'>
-            <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-2">Services</h3>
-            <ul className="list-none p-0 m-0 text-gray-700">
-              <li className="mb-1">Website Development</li>
-              <li className="mb-1">Mobile Application Development</li>
-              <li>Animation</li>
-            </ul>
-          </section>
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+              className="flex flex-wrap gap-4 pt-4"
+            >
+              <Button size="lg" className="group">
+                <a href="mailto:codewithikram@gmail.com" className="flex items-center gap-2">
+                  Get In Touch
+                  <motion.span
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.5 }}
+                  >
+                    →
+                  </motion.span>
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" className="group">
+                <a href={resume} download="Ikram_Sarkar_Resume.pdf" className="flex items-center gap-2">
+                  <FiDownload className="group-hover:animate-bounce" />
+                  Download CV
+                </a>
+              </Button>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="relative"
+          >
+            <div className="relative w-full max-w-md mx-auto">
+              {/* Decorative Elements */}
+              <div className="absolute -top-4 -left-4 w-72 h-72 bg-primary/20 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-4 -right-4 w-72 h-72 bg-teal-400/20 rounded-full blur-3xl"></div>
+              
+              {/* Image Container */}
+              <div className="relative z-10">
+                <div className="aspect-square rounded-3xl overflow-hidden border-4 border-primary/20 shadow-2xl">
+                  <img
+                    src={cover}
+                    alt="Ikram Sarkar"
+                    className="w-full h-full object-cover transform scale-130"
+                  />
+                </div>
+                
+                {/* Floating Badge */}
+              
+              </div>
+            </div>
+          </motion.div>
         </div>
 
-        {/* Center Image */}
-        <div className="flex-shrink-0 relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-1/3 lg:h-auto lg:max-w-md flex items-center justify-center">
-          <div className="relative w-full h-full rounded-full overflow-hidden shadow-xl border-4 border-white">
-            <img
-  src={cover}
-  alt="Mohammad Ikram"
-  className="w-full h-full object-cover transform transition-transform duration-500 scale-130 "
-/>
-
+        {/* Tech Stack Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.6 }}
+          className="space-y-8"
+        >
+          <div className="text-center space-y-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-black dark:text-white">
+              Tech Stack
+            </h2>
+            <p className="text-black/60 dark:text-white/60">
+              Technologies I work with
+            </p>
           </div>
-        </div>
 
-        {/* Right Column */}
-        <div className="flex flex-col space-y-8 text-right w-full lg:w-1/3 p-4 max-sm:hidden">
-          <section>
-            <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-2">Years of Experience</h3>
-            <p className="text-5xl font-bold text-gray-900">1.5</p>
-          </section>
-          <section>
-            <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-2">Satisfaction Clients</h3>
-            <p className="text-5xl font-bold text-gray-900">100%</p>
-          </section>
-          <section>
-            <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-2">Clients Worldwide</h3>
-            <p className="text-5xl font-bold text-gray-900">+20</p>
-          </section>
-          <section>
-            <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-2">Projects Done</h3>
-            <p className="text-5xl font-bold text-gray-900">48</p>
-          </section>
-        </div>
-      </main>
-   
-
-     {/* Mobile */}
-
-      <div className='md:hidden flex'>
-         <div className="flex flex-col space-y-8 text-left w-full lg:w-1/3 p-4">
-          {/* Biography */}
-          <section className=''>
-            <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-2">Biography</h3>
-            <p className="text-gray-700 leading-relaxed">
-              Work for money and code for love! I'm Ikram, an MERN stack Web Developer based in Bangladesh
-            </p>
-          </section>
-
-          {/* Contact */}
-          <section className=''>
-            <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-2">Contact</h3>
-            <div className="flex items-center text-gray-700 mb-1">
-              <FiMapPin size={16} className="mr-2 text-gray-500" />
-              <span>Brahmanbaria, Bangladesh</span>
-            </div>
-            <div className="flex items-center text-gray-700 mb-1">
-              <FiMail size={16} className="mr-2 text-gray-500" />
-              <a href="mailto:islamikram357@gmail.com" className="hover:underline">
-                islamikram357@gmail.com
-              </a>
-            </div>
-            <div className="flex items-center text-gray-700">
-              <FaWhatsapp size={16} className="mr-2 text-gray-500" />
-              <a href="https://wa.me/+8801776703315">+8801776703315</a>
-            </div>
-          </section>
-
-          {/* Services */}
-          <section className=''>
-            <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-2">Services</h3>
-            <ul className="list-none p-0 m-0 text-gray-700">
-              <li className="mb-1">Website Development</li>
-              <li className="mb-1">Mobile Application Development</li>
-              <li>Animation</li>
-            </ul>
-          </section>
-        </div>
-
-        {/* /;; */}
-
-        <div className="flex flex-col space-y-8 text-right w-full lg:w-1/3 p-4 ">
-          <section>
-            <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-2">Years of Experience</h3>
-            <p className="text-3xl font-bold text-gray-900">1.5</p>
-          </section>
-          <section>
-            <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-2">Satisfaction Clients</h3>
-            <p className="text-3xl font-bold text-gray-900">100%</p>
-          </section>
-          <section>
-            <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-2">Clients Worldwide</h3>
-            <p className="text-3xl font-bold text-gray-900">+20</p>
-          </section>
-          <section>
-            <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-2">Projects Done</h3>
-            <p className="text-3xl font-bold text-gray-900">48</p>
-          </section>
-        </div>
-
-
-
+          <div className="flex flex-wrap justify-center gap-6">
+            {techStack.map((tech, index) => (
+              <motion.div
+                key={tech.name}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.1 + index * 0.05 }}
+                whileHover={{ scale: 1.1, y: -5 }}
+                className="group relative"
+              >
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white dark:bg-gray-900 border border-border shadow-lg flex items-center justify-center transition-all group-hover:shadow-xl group-hover:border-primary/50">
+                  <tech.icon 
+                    size={32} 
+                    className="transition-colors"
+                    style={{ color: tech.color }}
+                  />
+                </div>
+                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="text-xs font-medium text-black/60 dark:text-white/60 whitespace-nowrap">
+                    {tech.name}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
-      {/* Footer Logos */}
-      <footer className="mt-16 w-[40%] max-sm:w-full max-w-6xl flex flex-wrap justify-center items-center gap-6 sm:gap-10 border-t border-gray-200 pt-8">
-        <Marquee>
-          <p><FaHtml5 className='text-3xl mx-10' /></p>
-          <p><FaCss3 className='text-3xl mx-10' /></p>
-          <p><IoLogoJavascript className='text-3xl mx-10' /></p>
-          <p><RiTailwindCssFill className='text-3xl mx-10' /></p>
-          <p><FaReact className='text-3xl mx-10' /></p>
-          <p><FaNodeJs className='text-3xl mx-10' /></p>
-          <p><SiMongodb className='text-3xl mx-10' /></p>
-        </Marquee>
-      </footer>
-
-      
     </div>
   );
 }

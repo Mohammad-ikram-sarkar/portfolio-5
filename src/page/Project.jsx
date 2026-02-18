@@ -14,6 +14,30 @@ const Project = () => {
             tech: ["Next.js 15", "TypeScript", "Tailwind CSS", "Better Auth", "Radix UI", "Framer Motion"],
             github: "https://github.com/Mohammad-ikram-sarkar/medistore-frontend",
             live: "https://medistore-frontend-one.vercel.app"
+        },
+        {
+            title: "TechMart - Modern E-Commerce Platform",
+            description: "A premium e-commerce platform built with Next.js 15 and MongoDB, featuring a rich text editor (TipTap), secure authentication, and optimized image management via ImageKit.",
+            image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
+            tech: ["Next.js 15", "MongoDB", "Tailwind CSS 4", "NextAuth.js", "TipTap", "Framer Motion"],
+            github: "https://github.com/Mohammad-ikram-sarkar/ecommerce",
+            live: "https://ecommerce-eight-olive-19.vercel.app"
+        },
+        {
+            title: "Poster - Social Connect & Share",
+            description: "A modern social media application featuring secure Google authentication, rich media sharing with ImageKit, and interactive post management.",
+            image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80",
+            tech: ["React", "Firebase Auth", "Tailwind CSS", "Shadcn UI", "ImageKit", "React Router 7"],
+            github: "https://github.com/Mohammad-ikram-sarkar/chat-app",
+            live: "https://chat-app-seven-taupe.vercel.app"
+        },
+        {
+            title: "Roommate - Find Your Perfect Match",
+            description: "A modern platform for finding roommates, featuring a premium card-based UI, secure Firebase authentication, and advanced dynamic filtering by location and budget.",
+            image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80",
+            tech: ["React 19", "Firebase", "Tailwind CSS 4", "Framer Motion", "React Router 7"],
+            github: "https://github.com/Mohammad-ikram-sarkar/Roommate",
+            live: "https://roommate-dev.vercel.app/find-roommate"
         }
     ];
 

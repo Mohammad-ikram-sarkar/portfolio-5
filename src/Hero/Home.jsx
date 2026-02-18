@@ -3,7 +3,7 @@ import { FiMail, FiMapPin, FiDownload } from 'react-icons/fi';
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import cover from "../assets/Gemini_Generated_Image_wuj3arwuj3arwuj3.png";
+import cover from "../assets/512908506_1261994748789025_5837757630180600658_n.jpg";
 import resume from "../assets/ikram.pdf";
 import Project from '../page/Project';
 import Skill from '../page/Skill';
@@ -16,9 +16,9 @@ function Home() {
   return (
     <div id="home" className="min-h-screen bg-background overflow-hidden">
       {/* Background Elements */}
-      <div className="fixed inset-0 -z-10">
-        <div className="absolute top-0 -left-4 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50 animate-pulse"></div>
-        <div className="absolute bottom-0 -right-4 w-96 h-96 bg-teal-400/10 rounded-full blur-3xl opacity-50 animate-pulse delay-1000"></div>
+      <div className="fixed inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-background to-background">
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px] opacity-40 animate-pulse"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-teal-500/10 rounded-full blur-[120px] opacity-40 animate-pulse delay-1000"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-8 py-24 lg:py-32">
@@ -132,12 +132,13 @@ function Home() {
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-teal-400/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
 
               {/* Image Container */}
-              <div className="relative z-10 w-full h-full rounded-3xl overflow-hidden border-2 border-primary/20 shadow-2xl bg-card/50 backdrop-blur-sm">
+              <div className="relative z-10 w-full h-full rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_-12px_rgba(0,0,0,0.5)] bg-white/[0.03] backdrop-blur-md">
                 <img
                   src={cover}
                   alt="Ikram Sarkar"
                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-60"></div>
               </div>
             </div>
           </motion.div>

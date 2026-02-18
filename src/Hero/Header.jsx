@@ -64,7 +64,7 @@ const Header = () => {
   };
 
   const socialLinks = [
-    { icon: FaLinkedin, url: "https://www.linkedin.com/in/ikram-islam/", size: 18, label: "LinkedIn" },
+    { icon: FaLinkedin, url: "https://www.linkedin.com/in/ikram-sarkar/", size: 18, label: "LinkedIn" },
     { icon: IoLogoGithub, url: "https://github.com/Mohammad-ikram-sarkar", size: 20, label: "GitHub" },
     { icon: FaXTwitter, url: "https://x.com/IkramIslam84992", size: 18, label: "Twitter" }
   ];
